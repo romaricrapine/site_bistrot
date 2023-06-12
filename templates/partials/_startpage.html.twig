@@ -12,20 +12,20 @@
                         <li>La Carte</li>
                     </ul>
                     {% endif %}
-                    {% if app.request.attributes.get('_route') == 'app_event_user' %}
-                        <h2>Les Évènements du Bistrot</h2>
-                        <ul>
-                            <li><a href="{{ path('app_home_user') }}">Accueil</a>
-                            </li>
-                            <li>Les Évènements</li>
-                        </ul>
-                    {% endif %}
                     {% if app.request.attributes.get('_route') == 'app_about_user' %}
                         <h2>A Propos du Bistrot</h2>
                         <ul>
                             <li><a href="{{ path('app_home_user') }}">Accueil</a>
                             </li>
                             <li>A Propos</li>
+                        </ul>
+                    {% endif %}
+                    {% if app.request.attributes.get('_route') == 'app_home_terms' %}
+                        <h2>Mentions Légales</h2>
+                        <ul>
+                            <li><a href="{{ path('app_home_user') }}">Accueil</a>
+                            </li>
+                            <li>Mentions Légales</li>
                         </ul>
                     {% endif %}
                 </div>

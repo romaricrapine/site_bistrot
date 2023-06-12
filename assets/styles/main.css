@@ -1421,6 +1421,20 @@ dl, ol, ul {
     font-weight: 700;
     margin-bottom: 15px;
 }
+.terms-content-text {
+    color: white;
+}
+.terms-content-text h5 {
+    font-family: unset;
+    color: unset;
+    text-transform: unset;
+}
+.terms-content-text p {
+    margin-bottom: 15px;
+}
+.terms-content-text .button {
+    margin-top: 10px;
+}
 .about-content-text p {
     margin-bottom: 15px;
 }
@@ -3572,15 +3586,15 @@ blockquote::after, .blockquote::after {
 }
 
 .widget-area .widget_snoki_posts_thumb .item .thumb .fullimage.bg1 {
-    background-image: url(../../assets/images/blog-details/1.jpg);
+    /*background-image: url(../../assets/images/blog-details/1.jpg);*/
 }
 
 .widget-area .widget_snoki_posts_thumb .item .thumb .fullimage.bg2 {
-    background-image: url(../../assets/images/blog-details/2.jpg);
+    /*background-image: url(../../assets/images/blog-details/2.jpg);*/
 }
 
 .widget-area .widget_snoki_posts_thumb .item .thumb .fullimage.bg3 {
-    background-image: url(../../assets/images/blog-details/3.jpg);
+    /*background-image: url(../../assets/images/blog-details/3.jpg);*/
 }
 
 .widget-area .widget_snoki_posts_thumb .item .info {

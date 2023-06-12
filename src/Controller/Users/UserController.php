@@ -46,8 +46,17 @@ class UserController extends AbstractController
     #[Route('/', name: 'app_home_partials')]
     public function partials(): Response
     {
-        return $this->render('template/base.html.twig', [
+        return $this->render('base.html.twig', [
 
         ]);
     }
+
+    #[Route('/terms', name: 'app_home_terms')]
+    public function terms(): Response
+    {
+        return $this->render('user/terms.html.twig', [
+
+        ]);
+    }
+
 }
