@@ -30,7 +30,7 @@ class Administrateur implements UserInterface, PasswordAuthenticatedUserInterfac
     private ?string $password = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $phone_number = null;
+    private ?string $phone_number = null;
 
     public function getId(): ?int
     {
@@ -102,12 +102,12 @@ class Administrateur implements UserInterface, PasswordAuthenticatedUserInterfac
         // $this->plainPassword = null;
     }
 
-    public function getPhoneNumber(): ?int
+    public function getPhoneNumber(): string
     {
         return $this->phone_number;
     }
 
-    public function setPhoneNumber(?int $phone_number): self
+    public function setPhoneNumber(string $phone_number): self
     {
         $this->phone_number = $phone_number;
 

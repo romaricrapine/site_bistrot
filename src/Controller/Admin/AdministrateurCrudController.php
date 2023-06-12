@@ -23,7 +23,8 @@ class AdministrateurCrudController extends AbstractCrudController
     {
         return [
             TextField::new('username')->setLabel('Prénom / Pseudo de connexion'),
-            IntegerField::new('phone_number')->setLabel('Numéro de téléphone'),
+            TextField::new('phone_number')
+                ->setLabel('Numéro de téléphone'),
             ArrayField::new('roles')->setLabel('Rôles')
                 ->setHelp('
             <br>    
@@ -33,7 +34,7 @@ class AdministrateurCrudController extends AbstractCrudController
             <br>
             <br> ROLE_CHEF pour le personnel qui pourras éditer le site. 
             <br>
-            <br> ROLE_SERVEUR pour le personne qui ne pourras pas éditer le site.
+            <br> ROLE_SERVEUR pour le personnel qui ne pourras pas éditer le site.
             <br>
             <br> <strong style="color: red;font-size: 20px">Merci de ne pas toucher au ROLE_USER !!</strong>. 
             </div>
@@ -50,9 +51,10 @@ class AdministrateurCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
+            ->disable('new')
             ->setPermission('delete', 'ROLE_ADMIN')
             ->setPermission('edit', 'ROLE_ADMIN')
-            ->disable('new')
+            ->setPermission('edit', 'ROLE_CHEF')
             ->setPermission(Action::BATCH_DELETE, 'ROLE_ADMIN');
     }
 
