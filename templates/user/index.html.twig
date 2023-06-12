@@ -1,0 +1,638 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <!-- Start Home Area -->
+    <div class="home-area">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 offset-lg-2 col-md-12">
+                            <div class="main-banner-content text-center">
+                                <h1>Bistrot de l'Hôtel de Ville.</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua, magna aliqua. ipsum is simply dummy
+                                    text of the printing.</p>
+                                <div class="banner-btn">
+                                    <a href="#boisson" class="default-btn-one">
+                                        Nos Boissons
+                                    </a>
+                                    <a class="default-btn" href="{{ path('app_carte_user') }}#menu">
+                                        Nos Menus
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Home Area -->
+
+    <!-- About Section Start -->
+    <section id="about" class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-content">
+                        <div class="about-content-text">
+                            <h5>Bistrot</h5>
+                            <h5>Le plat du jour</h5>
+                            <p>Depuis près de 10 ans, la Brasserie de l'Hôtel de Ville vous accueille pour le déjeuner
+                                ou le dîner. Notre cuisine faite maison et de saison saura vous régaler chaque jour de
+                                la semaine grâce à un large choix d'entrées, plats et desserts à la carte comme au menu
+                                du jour élaboré par notre cheffe.</p>
+                            <p>En famille comme entre amis, venez passer un agréable moment au Bistrot à l'heure de
+                                l'apéritif autour de nos planches fromagères, charcutières ou mixtes.</p>
+                            <div class="about-more-btn">
+                                <a class="default-btn" href="about.html">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-image-box">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="about-img">
+                                    <div class="about-img-1">
+                                        {#                                        <img src="assets/img/about-1.jpg" alt=""> #}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-img">
+                                    <div class="about-img-2">
+                                        {#                                        <img src="assets/img/about-2.jpg" alt=""> #}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-img">
+                                    <div class="about-img-2">
+                                        {#                                        <img src="assets/img/about-3.jpg" alt=""> #}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Service Section Start -->
+    <section id="services" class="services-area section-padding">
+        <div class="services-half-area"></div>
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h5 class="small-title">Ce que vous devez savoir</h5>
+                        <h2>Qualité du services</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="icofont-fast-food"></i>
+                        </div>
+                        <div class="services-info">
+                            <h6>Spécialiste du burger</h6>
+                            <p>Nous sélectionnons nos viandes avec la plus grande rigueur et les confectionnons avec un
+                                pain de notre artisan Boulanger.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="icofont-grapes"></i>
+                        </div>
+                        <div class="services-info">
+                            <h6>Bar à vin</h6>
+                            <p>Découvrez notre sélection de vins Français et étrangers changés tous les mois en
+                                collaboration avec un caviste.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services-item">
+                        <div class="services-icon">
+                            <i class="icofont-beer"></i>
+                        </div>
+                        <div class="services-info">
+                            <h6>Bières</h6>
+                            <p>Neufs tirages pressions dont un en bière découverte Française ou étrangère et d'autre à
+                                découvrir au Bistrot.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service Section End -->
+
+    <!-- Menu of The Day Section Start -->
+    <section class="menu-day-area section-padding" id="boisson">
+        <div class="container">
+            <div class="section-title">
+                <h5>La carte du Bar</h5>
+                <h2>Nos Boissons</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="menu-day-product-content">
+                        <div class="menu-day-tab-header">
+                            <ul class="menu-day-tab-list">
+                                {% for _categories in categories_boisson_chaude %}
+                                    <li>
+                                        <a href="#tab-menu-{{ _categories.id }}">
+                                            <i class="icofont-tea"></i>
+                                            <br>
+                                            {{ _categories.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                {% for _categories in categories_boisson_soft %}
+                                    <li>
+                                        <a href="#tab-menu-{{ _categories.id }}">
+                                            <i class="icofont-soft-drinks"></i>
+                                            <br>
+                                            {{ _categories.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                {% for _categories in categories_biere %}
+                                    <li>
+                                        <a href="#tab-menu-{{ _categories.id }}">
+                                            <i class="icofont-beer"></i>
+                                            <br>
+                                            {{ _categories.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                {% for _categories in categories_vin %}
+                                    <li>
+                                        <a href="#tab-menu-{{ _categories.id }}">
+                                            <i class="icofont-grapes"></i>
+                                            <br>
+                                            {{ _categories.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                {% for _categories in categories_cocktail %}
+                                    <li>
+                                        <a href="#tab-menu-{{ _categories.id }}">
+                                            <i class="icofont-cocktail"></i>
+                                            <br>
+                                            {{ _categories.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                <li>
+                                    <a href="#carte">
+                                        <i class="icofont-restaurant-menu"></i>
+                                        <br>
+                                        La Restauration
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-day-main-tabs-content">
+                            <div class="menu-single-tab-content active" id="tab-menu-6">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        {% for _categories in categories_boisson_chaude %}
+                                            {% for _products in _categories.products %}
+                                                <div class="menu-single-product-horizontal">
+                                                    <div class="menu-product-info-box">
+                                                        <div class="menu-product-details">
+                                                            <a class="menu-product-title offhref"
+                                                               href="#">{{ _products.name }}</a>
+                                                            <div style="color: white">{{ _products.description | raw }}</div>
+                                                        </div>
+                                                        {% if _products.activeFOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.fOption }}
+                                                                    {% if _products.fOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceFOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeSOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.SOption }}
+                                                                    {% if _products.SOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceSOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeTOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.TOption }}
+                                                                    {% if _products.TOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceTOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-single-tab-content" id="tab-menu-7">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        {% for _categories in categories_boisson_soft %}
+                                            {% for _products in _categories.products %}
+                                                <div class="menu-single-product-horizontal">
+                                                    <div class="menu-product-info-box">
+                                                        <div class="menu-product-details">
+                                                            <a class="menu-product-title offhref"
+                                                               href="#">{{ _products.name }}</a>
+                                                            <div style="color: white">{{ _products.description | raw }}</div>
+                                                        </div>
+                                                        {% if _products.activeFOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.fOption }}
+                                                                    {% if _products.fOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceFOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeSOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.SOption }}
+                                                                    {% if _products.SOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceSOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeTOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.TOption }}
+                                                                    {% if _products.TOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceTOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-single-tab-content" id="tab-menu-8">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        {% for _categories in categories_biere %}
+                                            {% for _products in _categories.products %}
+                                                <div class="menu-single-product-horizontal">
+                                                    <div class="menu-product-info-box">
+                                                        <div class="menu-product-details">
+                                                            <a class="menu-product-title offhref"
+                                                               href="#">{{ _products.name }}
+                                                                {% if _products.percentAlcool == true %}
+                                                                    - {{ _products.percentAlcool }}%
+                                                                {% endif %}
+                                                            </a>
+                                                            <div style="color: white">{{ _products.description | raw }}</div>
+                                                        </div>
+                                                        {% if _products.activeFOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.fOption }}
+                                                                    {% if _products.fOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceFOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeSOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.SOption }}
+                                                                    {% if _products.SOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceSOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeTOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.TOption }}
+                                                                    {% if _products.TOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceTOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-single-tab-content" id="tab-menu-9">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        {% for _categories in categories_vin %}
+                                            {% for _products in _categories.products %}
+                                                <div class="menu-single-product-horizontal">
+                                                    <div class="menu-product-info-box">
+                                                        <div class="menu-product-details">
+                                                            <a class="menu-product-title offhref"
+                                                               href="#">{{ _products.name }}
+                                                                {% if _products.percentAlcool == true %}
+                                                                    - {{ _products.percentAlcool }}%
+                                                                {% endif %}
+                                                            </a>
+                                                            <div style="color: white">{{ _products.description | raw }}</div>
+                                                        </div>
+                                                        {% if _products.activeFOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.fOption }}
+                                                                    {% if _products.fOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceFOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeSOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.SOption }}
+                                                                    {% if _products.SOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceSOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeTOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.TOption }}
+                                                                    {% if _products.TOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceTOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-single-tab-content" id="tab-menu-10">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        {% for _categories in categories_cocktail %}
+                                            {% for _products in _categories.products %}
+                                                <div class="menu-single-product-horizontal">
+                                                    <div class="menu-product-info-box">
+                                                        <div class="menu-product-details">
+                                                            <a class="menu-product-title offhref"
+                                                               href="#">{{ _products.name }}
+                                                                {% if _products.percentAlcool == true %}
+                                                                    - {{ _products.percentAlcool }}%
+                                                                {% endif %}
+                                                            </a>
+                                                            <p>{{ _products.description }}</p>
+                                                        </div>
+                                                        {% if _products.activeFOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.fOption }}
+                                                                    {% if _products.fOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceFOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeSOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.SOption }}
+                                                                    {% if _products.SOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceSOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if _products.activeTOption == '1' %}
+                                                            <div class="menu-product-price">
+                                                                <span>
+                                                                    {{ _products.TOption }}
+                                                                    {% if _products.TOption == true %}
+                                                                        CL :
+                                                                    {% endif %}
+                                                                </span>
+                                                                <span>{{ _products.priceTOption }}€</span>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-single-tab-content" id="carte">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                                        <div class="menu-single-product-horizontal">
+                                            <div class="menu-product-info-box">
+                                                <div class="menu-product-details">
+                                                    <a class="menu-product-title"
+                                                       href="{{ path('app_carte_user') }}">
+                                                        Cliquez ici pour visitez notre carte
+                                                    </a>
+                                                    <p>Découvrez notre délicieux menu : plats savoureux, ingrédients frais, choix varié. Venez déguster nos spécialités et succombez à nos saveurs passionnantes. Bon appétit !</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Menu of The Day Section End -->
+
+    <!-- Video Opening Hours Section Start -->
+    <section class="video-opening-hours-area">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 col-md-4">
+
+                </div>
+                {% for _informations in informations %}
+                    <div class="col-lg-5 offset-lg-1 col-md-8">
+                        <div class="store-location-opening-hours-box">
+                            <div class="contact-opening-hours-title">
+                                <h4 style="color: white">Informations de contact et horaire du Bistrot.</h4>
+                                <h3>Appelez-nous pour réserver.</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-store-location">
+                                        <h3 style="text-decoration: underline">BHV Bistrot Vesoul</h3>
+                                        <h6> Numéro de téléphone :
+                                            <i class="icofont-phone"></i>
+                                            03 84 96 99 32
+                                        </h6>
+                                        <p>4 Rue des Casernes, 70000 Vesoul</p>
+                                    </div>
+                                    <div class="opening-hours-box">
+                                        <div class="time">
+                                            {% if _informations.vacancesActive == true %}
+                                                <div class="section-title">
+                                                    <h5>Le Bistrot est Fermé Temporairement </h5>
+                                                    <h5>{{ _informations.vacances }} !</h5>
+                                                </div>
+                                            {% else %}
+                                                <table class="darkTable">
+                                                <tbody>
+                                                <tr>
+                                                    <td>Lundi</td>
+                                                    {% if _informations.lundiActive == true %}
+                                                        {% if _informations.lundi == true %}
+                                                            <td>{{ _informations.lundi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Mardi</td>
+                                                    {% if _informations.mardiActive == true %}
+                                                        {% if _informations.mardi == true %}
+                                                            <td>{{ _informations.mardi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Mercredi</td>
+                                                    {% if _informations.mercrediActive == true %}
+                                                        {% if _informations.mercredi == true %}
+                                                            <td>{{ _informations.mercredi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Jeudi</td>
+                                                    {% if _informations.jeudiActive == true %}
+                                                        {% if _informations.jeudi == true %}
+                                                            <td>{{ _informations.jeudi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Vendredi</td>
+                                                    {% if _informations.vendrediActive == true %}
+                                                        {% if _informations.vendredi == true %}
+                                                            <td>{{ _informations.vendredi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Samedi</td>
+                                                    {% if _informations.samediActive == true %}
+                                                        {% if _informations.samedi == true %}
+                                                            <td>{{ _informations.samedi }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                <tr>
+                                                    <td>Dimanche</td>
+                                                    {% if _informations.dimancheActive == true %}
+                                                        {% if _informations.dimanche == true %}
+                                                            <td>{{ _informations.dimanche }}</td>
+                                                        {% else %}
+                                                            <td>Horaires inconnus.</td>
+                                                        {% endif %}
+                                                    {% else %}
+                                                        <td>Fermé.</td>
+                                                    {% endif %}
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Video Opening Hours Section End -->
+
+{% endblock %}

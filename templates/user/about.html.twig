@@ -1,0 +1,415 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Propos{% endblock %}
+
+{% block body %}
+
+    {% include 'partials/_startpage.html.twig' %}
+
+    <!-- About Section Start -->
+    <section id="about" class="about-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-content">
+                        <div class="about-content-text">
+                            <h5>Our Story</h5>
+                            <h2>Welcome to Vegan Resturant</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud consectetur adipiscing adipiscing elit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud consectetur adipiscing incididunt ut labore et dolore elit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud consectetur adipiscing elit.</p>
+                            <div class="about-more-btn">	<a class="default-btn" href="about.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="about-image-box">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="about-img">
+                                    <div class="about-img-1">
+                                        <img src="assets/img/about-1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-img">
+                                    <div class="about-img-2">
+                                        <img src="assets/img/about-2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-img">
+                                    <div class="about-img-2">
+                                        <img src="assets/img/about-3.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Video Opening Hours Section Start -->
+    <section class="video-opening-hours-area">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 col-md-4">
+
+                </div>
+                {% for _informations in informations %}
+                    <div class="col-lg-5 offset-lg-1 col-md-8">
+                        <div class="store-location-opening-hours-box">
+                            <div class="contact-opening-hours-title">
+                                <h4 style="color: white">Informations de contact et horaire du Bistrot.</h4>
+                                <h3>Appelez-nous pour réserver.</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-store-location">
+                                        <h3 style="text-decoration: underline">BHV Bistrot Vesoul</h3>
+                                        <h6> Numéro de téléphone :
+                                            <i class="icofont-phone"></i>
+                                            03 84 96 99 32
+                                        </h6>
+                                        <p>4 Rue des Casernes, 70000 Vesoul</p>
+                                    </div>
+                                    <div class="opening-hours-box">
+                                        <div class="time">
+                                            {% if _informations.vacancesActive == true %}
+                                                <div class="section-title">
+                                                    <h5>Le Bistrot est Fermé Temporairement </h5>
+                                                    <h5>{{ _informations.vacances }} !</h5>
+                                                </div>
+                                            {% else %}
+                                                <table class="darkTable">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Lundi</td>
+                                                        {% if _informations.lundiActive == true %}
+                                                            {% if _informations.lundi == true %}
+                                                                <td>{{ _informations.lundi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mardi</td>
+                                                        {% if _informations.mardiActive == true %}
+                                                            {% if _informations.mardi == true %}
+                                                                <td>{{ _informations.mardi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mercredi</td>
+                                                        {% if _informations.mercrediActive == true %}
+                                                            {% if _informations.mercredi == true %}
+                                                                <td>{{ _informations.mercredi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jeudi</td>
+                                                        {% if _informations.jeudiActive == true %}
+                                                            {% if _informations.jeudi == true %}
+                                                                <td>{{ _informations.jeudi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vendredi</td>
+                                                        {% if _informations.vendrediActive == true %}
+                                                            {% if _informations.vendredi == true %}
+                                                                <td>{{ _informations.vendredi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Samedi</td>
+                                                        {% if _informations.samediActive == true %}
+                                                            {% if _informations.samedi == true %}
+                                                                <td>{{ _informations.samedi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dimanche</td>
+                                                        {% if _informations.dimancheActive == true %}
+                                                            {% if _informations.dimanche == true %}
+                                                                <td>{{ _informations.dimanche }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Video Opening Hours Section End -->
+
+    <!-- Team Section Start -->
+    <section id="team" class="team-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h5>Team Members</h5>
+                        <h2>Expert Chefs</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="assets/img/team/team-1.jpg" alt="team" />
+                            <div class="team-social-box">
+                                <div class="team-social-icon"> <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Ava Farrington</h3>
+                            <span>Head Chef, Smyth</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="assets/img/team/team-2.jpg" alt="team" />
+                            <div class="team-social-box">
+                                <div class="team-social-icon"> <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Kevin Haley</h3>
+                            <span>Executive Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="assets/img/team/team-3.jpg" alt="team" />
+                            <div class="team-social-box">
+                                <div class="team-social-icon"> <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Alishia Fulton</h3>
+                            <span>Executive Pastry Chef</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-team-box">
+                        <div class="team-image">
+                            <img src="assets/img/team/team-4.jpg" alt="team" />
+                            <div class="team-social-box">
+                                <div class="team-social-icon"> <a href="#" class="social-color-1"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-color-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-color-3"><i class="fab fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Stevie Wills</h3>
+                            <span>Executive Sous Chef</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Testimonials Section Start -->
+    <section id="review" class="testimonial-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h5>Testimonials</h5>
+                        <h2>Client Feedback</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12">
+                    <div id="testimonial-slide" class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="rating-box">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, nostrud consectetur adipiscing elit.</p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="avatar">
+                                        <img src="assets/img/client/testimonial-1.jpg" alt="testimonial">
+                                    </div>
+                                    <div class="bio-info">
+                                        <h3 class="name">Stevie Wills</h3><span>Founder of Apple</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="rating-box">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, nostrud consectetur adipiscing elit.</p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="avatar">
+                                        <img src="assets/img/client/testimonial-2.jpg" alt="testimonial">
+                                    </div>
+                                    <div class="bio-info">
+                                        <h3 class="name">Rose Hopkins</h3><span>Founder of Apple</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="rating-box">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, nostrud consectetur adipiscing elit.</p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="avatar">
+                                        <img src="assets/img/client/testimonial-3.jpg" alt="testimonial">
+                                    </div>
+                                    <div class="bio-info">
+                                        <h3 class="name">Herman Boone</h3><span>Founder of Apple</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- testimonials item -->
+                        <div class="single-testimonial">
+                            <div class="testi-content-inner">
+                                <div class="rating-box">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                        <li><i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, nostrud consectetur adipiscing elit.</p>
+                                </div>
+                                <div class="testimonial-bio">
+                                    <div class="avatar">
+                                        <img src="assets/img/client/testimonial-4.jpg" alt="testimonial">
+                                    </div>
+                                    <div class="bio-info">
+                                        <h3 class="name">Zahra Burnett</h3><span>Founder of Apple</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section End -->
+
+{% endblock %}

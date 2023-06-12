@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        {% include 'partials/_navbar.html.twig' %}
+
+        {% block body %}
+
+        {% endblock %}
+
+        {% include 'partials/_gototop.html.twig' %}
+        {% include 'partials/_footer.html.twig' %}
+        {% include 'partials/_copyright.html.twig' %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        <!-- jQuery Min JS -->
+        <script src="{{ asset('build/js/jquery.min.js') }}"></script>
+        <!-- Popper Min JS -->
+        <script src="{{ asset('build/js/popper.min.js') }}"></script>
+        <!-- Bootstrap Min JS -->
+        <script src="{{ asset('build/js/bootstrap.min.js') }}"></script>
+        <!-- MeanMenu JS  -->
+        <script src="{{ asset('build/js/jquery.meanmenu.js') }}"></script>
+        <!-- Appear Min JS -->
+        <script src="{{ asset('build/js/jquery.appear.min.js') }}"></script>
+        <!-- Odometer Min JS -->
+        <script src="{{ asset('build/js/isotope.pkgd.min.js') }}"></script>
+        <!-- Owl Carousel Min JS -->
+        <script src="{{ asset('build/js/owl.carousel.min.js') }}"></script>
+        <!-- Magnific Popup Min JS -->
+        <script src="{{ asset('build/js/jquery.magnific-popup.min.js') }}"></script>
+        <!-- Nice Select Min JS -->
+        <script src="{{ asset('build/js/jquery.nice-select.min.js') }}"></script>
+        <!-- Swiper Min JS -->
+        <script src="{{ asset('build/js/swiper.min.js') }}"></script>
+        <!-- WOW Min JS -->
+        <script src="{{ asset('build/js/wow.min.js') }}"></script>
+        <!-- Main JS -->
+        <script src="{{ asset('build/js/main.js') }}"></script>
+
+    </body>
+</html>

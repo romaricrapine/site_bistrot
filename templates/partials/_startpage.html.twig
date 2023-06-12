@@ -1,0 +1,36 @@
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content">
+                    {% if app.request.attributes.get('_route') == 'app_carte_user' %}
+                    <h2>La Carte du Bistrot</h2>
+                    <ul>
+                        <li><a href="{{ path('app_home_user') }}">Accueil</a>
+                        </li>
+                        <li>La Carte</li>
+                    </ul>
+                    {% endif %}
+                    {% if app.request.attributes.get('_route') == 'app_event_user' %}
+                        <h2>Les Évènements du Bistrot</h2>
+                        <ul>
+                            <li><a href="{{ path('app_home_user') }}">Accueil</a>
+                            </li>
+                            <li>Les Évènements</li>
+                        </ul>
+                    {% endif %}
+                    {% if app.request.attributes.get('_route') == 'app_about_user' %}
+                        <h2>A Propos du Bistrot</h2>
+                        <ul>
+                            <li><a href="{{ path('app_home_user') }}">Accueil</a>
+                            </li>
+                            <li>A Propos</li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->

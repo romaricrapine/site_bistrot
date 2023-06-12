@@ -1,0 +1,7 @@
+.form-widget .form-select, .form-widget input.form-control, .form-widget textarea.form-control {
+    margin: 10px 0;
+}
+
+.input-group-text {
+    margin: 10px 0;
+}

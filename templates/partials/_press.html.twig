@@ -1,0 +1,41 @@
+{% if
+    app.request.attributes.get('_route') == 'app_login' or
+    app.request.attributes.get('_route') == 'app_register'
+%}
+
+{% else %}
+
+<!-- Press Section Start -->
+<section class="press-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="single-press-content">
+                    <h3>Voted Best Delicious Lunch</h3>
+                    <img src="assets/img/press/press-1.png" alt="press image" />
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="single-press-content">
+                    <h3>Voted Best Night BBQ</h3>
+                    <img src="assets/img/press/press-2.png" alt="press image" />
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="single-press-content">
+                    <h3>Voted Best Quality Food</h3>
+                    <img src="assets/img/press/press-3.png" alt="press image" />
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="single-press-content">
+                    <h3>Natural Organic Food</h3>
+                    <img src="assets/img/press/press-4.png" alt="press image" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Press Section End -->
+
+{% endif %}

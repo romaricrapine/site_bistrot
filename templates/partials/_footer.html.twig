@@ -1,0 +1,49 @@
+{% if
+    app.request.attributes.get('_route') == 'app_login' or
+    app.request.attributes.get('_route') == 'app_register'
+%}
+
+{% else %}
+
+<!-- Start Footer Area -->
+<footer class="footer-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-box-item">
+                <div class="single-footer-widget">
+                    <div class="footer-heading">
+                        <h3>Adresse</h3>
+                    </div>
+                    <p>4 Rue des Casernes,
+                        <br> 70000 Vesoul</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-box-item disabled-footer">
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 footer-box-item">
+                <div class="single-footer-widget">
+                    <div class="footer-heading">
+                        <h3>Contact</h3>
+                    </div>
+                    <div class="footer-info-contact">	<a class="footer-number" href="tel:0384969932">03 84 96 99 32</a>
+                    </div>
+                    <div class="footer-info-contact">	<a href="mailto:bhv.marais70@gmail.com">bhv.marais70@gmail.com</a>
+                    </div>
+                    <ul class="footer-social">
+                        <li>
+                            <a href="https://www.facebook.com/bhv.bistrot.vesoul"> <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/bhv.bistrot.vesoul/"> <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer Section -->
+
+{% endif %}

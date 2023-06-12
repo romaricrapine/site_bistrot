@@ -1,0 +1,27 @@
+{% if
+    app.request.attributes.get('_route') == 'app_login' or
+    app.request.attributes.get('_route') == 'app_register'
+%}
+
+{% else %}
+
+    <!-- Start Copy Right Section -->
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6">
+                    <p>BHV Bistrot © 2023.</p>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <ul>
+                        <li> <a href="terms-condition.html">Mentions Légales.</a>
+                        {# TODO: faire la page des mentions légales #}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Copy Right Section -->
+
+{% endif %}

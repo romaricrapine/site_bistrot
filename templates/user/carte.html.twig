@@ -1,0 +1,356 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La Carte{% endblock %}
+
+{% block body %}
+
+    {% include 'partials/_startpage.html.twig' %}
+
+
+    {# TODO: Faire la page pour la carte restauration#}
+    <!-- Start Menu Area -->
+    <section id="menu" class="menu-area section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos menus</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="tab">
+                        <ul class="tabs">
+                            <li>
+                                <a href="#"> <i class="icofont-cabbage"></i>
+                                    <br>Salade</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-burger"></i>
+                                    <br>Burger</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-spoon-and-fork"></i>
+                                    <br>Plat</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-dining-table"></i>
+                                    <br>Planche à Partager</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-restaurant-menu"></i>
+                                    <br>Menu des Boubou</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-ice-cream-alt"></i>
+                                    <br>Dessert</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-grapes"></i>
+                                    <br>Vin</a>
+                            </li>
+                            <li>
+                                <a href="#"> <i class="icofont-soft-drinks"></i>
+                                    <br>Boisson</a>
+                            </li>
+                        </ul>
+                        <div class="tab_content">
+                            <!-- Salade -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_salade %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Burger -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_burger %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Plat -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_plat %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Planche -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_planche %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Menu -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_menu %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Dessert -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_dessert %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Vin -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_vin %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <!-- Boisson -->
+                            <div class="tabs_item">
+                                <div class="row">
+                                    {% for _entrer in categories_boisson_soft %}
+                                        {% for _products in _entrer.products %}
+                                            <div class="col-lg-6 col-md-12">
+                                                <div class="single-menu">
+                                                    <div class="food-menu-content">
+                                                        <h3>{{ _products.name }} <span class="menu-start-price">{{ _products.priceFOption }} €</span></h3>
+                                                        <ul>
+                                                            <li>{{ _products.description | raw }}</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Menu Area -->
+
+    <!-- Video Opening Hours Section Start -->
+    <section class="video-opening-hours-area">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 col-md-4">
+
+                </div>
+                {% for _informations in informations %}
+                    <div class="col-lg-5 offset-lg-1 col-md-8">
+                        <div class="store-location-opening-hours-box">
+                            <div class="contact-opening-hours-title">
+                                <h4 style="color: white">Informations de contact et horaire du Bistrot.</h4>
+                                <h3>Appelez-nous pour réserver.</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="single-store-location">
+                                        <h3 style="text-decoration: underline">BHV Bistrot Vesoul</h3>
+                                        <h6> Numéro de téléphone :
+                                            <i class="icofont-phone"></i>
+                                            03 84 96 99 32
+                                        </h6>
+                                        <p>4 Rue des Casernes, 70000 Vesoul</p>
+                                    </div>
+                                    <div class="opening-hours-box">
+                                        <div class="time">
+                                            {% if _informations.vacancesActive == true %}
+                                                <div class="section-title">
+                                                    <h5>Le Bistrot est Fermé Temporairement </h5>
+                                                    <h5>{{ _informations.vacances }} !</h5>
+                                                </div>
+                                            {% else %}
+                                                <table class="darkTable">
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Lundi</td>
+                                                        {% if _informations.lundiActive == true %}
+                                                            {% if _informations.lundi == true %}
+                                                                <td>{{ _informations.lundi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mardi</td>
+                                                        {% if _informations.mardiActive == true %}
+                                                            {% if _informations.mardi == true %}
+                                                                <td>{{ _informations.mardi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mercredi</td>
+                                                        {% if _informations.mercrediActive == true %}
+                                                            {% if _informations.mercredi == true %}
+                                                                <td>{{ _informations.mercredi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Jeudi</td>
+                                                        {% if _informations.jeudiActive == true %}
+                                                            {% if _informations.jeudi == true %}
+                                                                <td>{{ _informations.jeudi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Vendredi</td>
+                                                        {% if _informations.vendrediActive == true %}
+                                                            {% if _informations.vendredi == true %}
+                                                                <td>{{ _informations.vendredi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Samedi</td>
+                                                        {% if _informations.samediActive == true %}
+                                                            {% if _informations.samedi == true %}
+                                                                <td>{{ _informations.samedi }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dimanche</td>
+                                                        {% if _informations.dimancheActive == true %}
+                                                            {% if _informations.dimanche == true %}
+                                                                <td>{{ _informations.dimanche }}</td>
+                                                            {% else %}
+                                                                <td>Horaires inconnus.</td>
+                                                            {% endif %}
+                                                        {% else %}
+                                                            <td>Fermé.</td>
+                                                        {% endif %}
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Video Opening Hours Section End -->
+
+{% endblock %}
