@@ -133,8 +133,7 @@ class InformationsCrudController extends AbstractCrudController
         return $actions
             ->disable('new')
             ->disable('delete')
-            ->setPermission('edit', 'ROLE_ADMIN')
-            ->setPermission('edit', 'ROLE_CHEF');
+            ->setPermission('edit', 'ROLE_ADMIN');
     }
 
     public function configureCrud(Crud $crud): Crud

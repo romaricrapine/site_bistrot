@@ -32,8 +32,6 @@ class AdministrateurCrudController extends AbstractCrudController
             <br>
             <br> ROLE_ADMIN pour les dirigeants de l\'établissement.
             <br>
-            <br> ROLE_CHEF pour le personnel qui pourras éditer le site. 
-            <br>
             <br> ROLE_SERVEUR pour le personnel qui ne pourras pas éditer le site.
             <br>
             <br> <strong style="color: red;font-size: 20px">Merci de ne pas toucher au ROLE_USER !!</strong>. 
@@ -54,7 +52,6 @@ class AdministrateurCrudController extends AbstractCrudController
             ->disable('new')
             ->setPermission('delete', 'ROLE_ADMIN')
             ->setPermission('edit', 'ROLE_ADMIN')
-            ->setPermission('edit', 'ROLE_CHEF')
             ->setPermission(Action::BATCH_DELETE, 'ROLE_ADMIN');
     }
 

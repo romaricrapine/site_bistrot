@@ -120,7 +120,6 @@ class ProductsCrudController extends AbstractCrudController
             BooleanField::new('active')
                 ->setLabel('On / Off')
                 ->setPermission('ROLE_ADMIN')
-                ->setPermission('ROLE_CHEF')
         ];
     }
 
@@ -134,11 +133,8 @@ class ProductsCrudController extends AbstractCrudController
     {
         return $actions
             ->setPermission('new', 'ROLE_ADMIN')
-            ->setPermission('new', 'ROLE_CHEF')
             ->setPermission('edit', 'ROLE_ADMIN')
-            ->setPermission('edit', 'ROLE_CHEF')
             ->setPermission('delete', 'ROLE_ADMIN')
-            ->setPermission('delete', 'ROLE_CHEF')
             ->setPermission(Action::BATCH_DELETE, 'ROLE_ADMIN');
     }
 
